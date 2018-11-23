@@ -1,0 +1,32 @@
+<div class= "card">
+        <div class= "card-header">
+           Employees list 
+        </div>
+        <div class= "card-body">
+          <table >
+            <div *ngFor="let employee of employees">
+                <tr>  
+                  <div class="collapse" [class.show]="show">  
+                  <p>  Id: {{employee.id}} </p>
+                  <p>  Name:{{employee.employeeName}}</p>
+                </div>  
+                  <div>
+                      <button (click)="toggleCollapse()" class="btn btn-info" type="button" >Employee Details</button>
+                    
+                      <div  class="collapse" [class.show]="!show">
+                           <p>  Id: {{employee.id}} </p>
+                           <p>  Name:{{employee.employeeName}}</p>
+                           <p>Salary: {{employee.salary}}</p>
+                           <p> Department: {{employee.department}}</p>
+                           <p> Manager: {{employee.manager}}</p>
+                           <p> Date of Birth: {{employee.dateOfBirth}}</p>
+                           <p> Date of Joined: {{employee.dateOfJoined}}</p>
+                      </div> 
+                              
+                  </div>          
+                         
+                </tr>          
+            </div>
+          </table>           
+        </div>
+      </div>
